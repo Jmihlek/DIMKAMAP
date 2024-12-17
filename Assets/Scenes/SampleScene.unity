@@ -1830,6 +1830,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   GroundTiles: []
+  WaterTiles:
+  - {fileID: 1636530658}
+  - {fileID: 1371275415}
 --- !u!212 &1120658482
 SpriteRenderer:
   m_ObjectHideFlags: 0
