@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -10,9 +11,11 @@ public class PlayerController2D : MonoBehaviour
     public Tilemap[] WaterTiles;
     // Смещение для точки проверки на воде
     public Vector2 WaterCheckOffset;
+    public event Action OnDead;
 
     private BoxCollider2D _boxCollider2D;
     private PlayerInput _input;
+    private bool _isDead;
 
     private void Awake()
     {
@@ -46,6 +49,8 @@ public class PlayerController2D : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_isDead) 
+            return;
         if (LevelTransitionTrigger.PlayerInteraction)
             return;
 
@@ -62,7 +67,8 @@ public class PlayerController2D : MonoBehaviour
         if (IsOnWater(currentPosition))
         {
             Debug.Log("Player is on water and should die.");
-            // Здесь будет логика смерти игрока
+            _isDead = true;
+            OnDead?.Invoke();
         }
     }
 

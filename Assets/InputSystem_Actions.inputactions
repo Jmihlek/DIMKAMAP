@@ -168,6 +168,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ccd09244-6c88-4407-9e00-d82d9776a61b",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1c04ea5f-b012-41d1-a6f7-02e963b52893",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -180,7 +191,7 @@
                 {
                     "name": "",
                     "id": "b3f66d0b-7751-423f-908b-a11c5bd95930",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -195,6 +206,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77ba19ae-13d0-4f29-a129-c715bdb1aaec",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -377,6 +399,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7ab3a55b-bad0-4ef3-af8f-f907f2f2f4cb",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "MoveShip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e21188e9-288b-4696-be6e-6b3281c6d28a",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
@@ -400,7 +433,7 @@
                 {
                     "name": "",
                     "id": "70604de0-48a9-40a2-9b60-0ffd82463663",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -421,11 +454,33 @@
                 },
                 {
                     "name": "",
+                    "id": "c5bf8413-28ea-4982-a4be-32490816a01e",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitShip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7133cfaa-6a15-4522-8e55-845c10733ae9",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InteractShip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5e68c36-f4de-488f-a63b-8a26dcbe7f3e",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "InteractShip",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -963,6 +1018,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Modal",
+            "id": "26e74de3-78c4-47b6-b398-09a8e5770be5",
+            "actions": [
+                {
+                    "name": "ModelClose",
+                    "type": "Button",
+                    "id": "8ffde41c-ac19-493c-9975-dfde2bc54d42",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc7585f7-d876-4b2d-899d-726b247a8d56",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ModelClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e803fc2-5ce6-4a43-9cf1-44a2e0e638d1",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ModelClose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
