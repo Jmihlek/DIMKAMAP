@@ -7,10 +7,16 @@ public class DeadManager : MonoBehaviour
     [SerializeField] private List<GameObject> deathMessages; // Список сообщений о смерти
     [SerializeField] private List<GameObject> areas; // Список областей
     private PlayerController2D _player;
-    private void Start()
+
+    private void OnEnable()
     {
         _player = FindAnyObjectByType<PlayerController2D>();
         _player.OnDead += _player_OnDead;
+    }
+
+    private void OnDisable()
+    {
+        _player.OnDead -= _player_OnDead;
     }
 
     private void _player_OnDead()

@@ -14,6 +14,11 @@ public class ModalWindow : MonoBehaviour
         _input.actions["ModelClose"].performed += ModalWindow_performed;
     }
 
+    private void OnDisable()
+    {
+        _input.actions["ModelClose"].performed -= ModalWindow_performed;
+    }
+
     private void ModalWindow_performed(InputAction.CallbackContext obj)
     {
         _input.SwitchCurrentActionMap("Player");

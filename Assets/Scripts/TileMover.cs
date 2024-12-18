@@ -23,9 +23,20 @@ public class TileMover : MonoBehaviour
     {
         cursorObject.SetActive(false);
         UpdateCursor();
+    }
+
+    private void OnEnable()
+    {
         _input.actions["ExitShip"].performed += OnExitInputPressed;
         _input.actions["MoveShip"].performed += OnMoveInput;
         _input.actions["InteractShip"].performed += OnInteractInput;
+    }
+
+    private void OnDisable()
+    {
+        _input.actions["ExitShip"].performed -= OnExitInputPressed;
+        _input.actions["MoveShip"].performed -= OnMoveInput;
+        _input.actions["InteractShip"].performed -= OnInteractInput;
     }
 
     private void OnInteractInput(InputAction.CallbackContext obj)
