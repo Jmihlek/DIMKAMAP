@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class DeadManager : MonoBehaviour
@@ -7,16 +8,26 @@ public class DeadManager : MonoBehaviour
     [SerializeField] private List<GameObject> deathMessages; // Список сообщений о смерти
     [SerializeField] private List<GameObject> areas; // Список областей
     private PlayerController2D _player;
+    private PlayerInput _input;
 
     private void OnEnable()
     {
         _player = FindAnyObjectByType<PlayerController2D>();
         _player.OnDead += _player_OnDead;
+
+        _input = FindAnyObjectByType<PlayerInput>();
+        _input.actions["Restart"].performed += InputRestart;
+    }
+
+    private void InputRestart(InputAction.CallbackContext obj)
+    {
+        RestartLevel();
     }
 
     private void OnDisable()
     {
         _player.OnDead -= _player_OnDead;
+        _input.actions["Restart"].performed -= InputRestart;
     }
 
     private void _player_OnDead()

@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Tilemaps;
 
-public class CoverController : MonoBehaviour
+public class TilemapFadeController : MonoBehaviour
 {
     public float FadeOutDuration = 1f;
     public float FadeInDuration = 1f;
-    private SpriteRenderer _spriteRenderer;
+    private Tilemap _tilemap;
 
     public UnityEvent OnFadeOutStart;
     public UnityEvent OnFadeOutComplete;
@@ -15,7 +16,7 @@ public class CoverController : MonoBehaviour
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _tilemap = GetComponent<Tilemap>();
     }
 
     public void StartFadeSequence()
@@ -60,16 +61,16 @@ public class CoverController : MonoBehaviour
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {
         float elapsed = 0f;
-        Color color = _spriteRenderer.color;
+        Color color = _tilemap.color;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
-            _spriteRenderer.color = new Color(color.r, color.g, color.b, Mathf.Lerp(startAlpha, endAlpha, t));
+            _tilemap.color = new Color(color.r, color.g, color.b, Mathf.Lerp(startAlpha, endAlpha, t));
             yield return null;
         }
 
-        _spriteRenderer.color = new Color(color.r, color.g, color.b, endAlpha);
+        _tilemap.color = new Color(color.r, color.g, color.b, endAlpha);
     }
 }
