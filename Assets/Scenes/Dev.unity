@@ -6644,46 +6644,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8068984087475018263, guid: 0a36a8062d1bfbe498ff6f083b812bc4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 411979617}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a36a8062d1bfbe498ff6f083b812bc4, type: 3}
---- !u!1 &411979616 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8068984087475018263, guid: 0a36a8062d1bfbe498ff6f083b812bc4, type: 3}
-  m_PrefabInstance: {fileID: 411979615}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &411979617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411979616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e20a988eaf38d4e8a58f687d836c0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventAfterClose:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2027099615}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!4 &411979620 stripped
+--- !u!4 &411979616 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3873730828243291642, guid: 0a36a8062d1bfbe498ff6f083b812bc4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6257118327806698137, guid: 0a36a8062d1bfbe498ff6f083b812bc4, type: 3}
   m_PrefabInstance: {fileID: 411979615}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &428859707
@@ -26471,7 +26436,7 @@ Transform:
   - {fileID: 1312846547}
   - {fileID: 461705955}
   - {fileID: 2027099619}
-  - {fileID: 411979620}
+  - {fileID: 411979616}
   - {fileID: 1762391500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45471,7 +45436,7 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 411979616}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -52553,25 +52518,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3357228675286738730, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357228675286738730, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357228675286738730, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4509503522645296623, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.5084
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4509503522645296623, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
       propertyPath: m_LocalScale.y
-      value: 6.5084
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4509503522645296623, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
       propertyPath: m_LocalScale.z
-      value: 6.5084
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4509503522645296623, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.640003
+      value: 41.36
       objectReference: {fileID: 0}
     - target: {fileID: 4509503522645296623, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8000002
+      value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 4509503522645296623, guid: dc6e34691e1bf5d4fa808a10b585ceed, type: 3}
       propertyPath: m_LocalPosition.z
