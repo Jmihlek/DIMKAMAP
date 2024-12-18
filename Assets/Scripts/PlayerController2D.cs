@@ -9,11 +9,11 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _movement;
     public Tilemap[] WaterTiles;
-    // Смещение для точки проверки на воде
     public Vector2 WaterCheckOffset;
     public event Action OnDead;
+    public Tilemap SlipperyTilemap;
+    public float SlipperyFactor = .1f;
 
-    private BoxCollider2D _boxCollider2D;
     private PlayerInput _input;
     private bool _isDead;
 
@@ -32,13 +32,13 @@ public class PlayerController2D : MonoBehaviour
     {
         var moveInput = _input.actions["Move"].ReadValue<Vector2>();
         _movement = Vector2Int.RoundToInt(moveInput);
-        // Нормализуем вектор движения, чтобы избежать ускорения по диагонали
+        // РќРѕСЂРјР°Р»РёР·СѓРµРј РІРµРєС‚РѕСЂ РґРІРёР¶РµРЅРёСЏ, С‡С‚РѕР±С‹ РёР·Р±РµР¶Р°С‚СЊ СѓСЃРєРѕСЂРµРЅРёСЏ РїРѕ РґРёР°РіРѕРЅР°Р»Рё
         if (_movement.sqrMagnitude > 1)
         {
             _movement.Normalize();
         }
 
-        // Изменение направления взгляда
+        // РР·РјРµРЅРµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ РІР·РіР»СЏРґР°
         if (_movement.x != 0)
         {
             Vector3 scale = transform.localScale;
@@ -49,27 +49,49 @@ public class PlayerController2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isDead) 
+        if (_isDead || ModalWindow.IsShowModalNow)
+        {
+            _rb.linearVelocity = Vector2.zero;
             return;
+        }
         if (LevelTransitionTrigger.PlayerInteraction)
             return;
 
         Vector2 currentPosition = transform.position;
         Vector2 newPosition = currentPosition + _movement * MoveSpeed * Time.deltaTime;
 
-        // Движение по отдельности чтобы избежать трения
+        // Р”РІРёР¶РµРЅРёРµ РїРѕ РѕС‚РґРµР»СЊРЅРѕСЃС‚Рё С‡С‚РѕР±С‹ РёР·Р±РµР¶Р°С‚СЊ С‚СЂРµРЅРёСЏ
         currentPosition.x = newPosition.x;
         currentPosition.y = newPosition.y;
 
-        _rb.MovePosition(currentPosition);
+        if (IsOnSlipperySurface(currentPosition))
+        {
+            // Р”РѕР±Р°РІР»СЏРµРј СЃРёР»Сѓ СЃРєРѕР»СЊР¶РµРЅРёСЏ СЃ СѓС‡РµС‚РѕРј РёРЅРµСЂС†РёРё
+            Vector2 targetVelocity = _movement * MoveSpeed * 5;
+            Vector2 velocityChange = targetVelocity - _rb.linearVelocity;
+            _rb.AddForce(velocityChange * SlipperyFactor, ForceMode2D.Force);
+        }
+        else
+        {
+            // РћР±С‹С‡РЅРѕРµ РґРІРёР¶РµРЅРёРµ
+            _rb.MovePosition(currentPosition);
+        }
 
-        // Проверка нахождение на воде
+        // РџСЂРѕРІРµСЂРєР° РЅР°С…РѕР¶РґРµРЅРёРµ РЅР° РІРѕРґРµ
         if (IsOnWater(currentPosition))
         {
             Debug.Log("Player is on water and should die.");
+            _rb.linearVelocity = Vector2.zero;
             _isDead = true;
             OnDead?.Invoke();
         }
+    }
+
+    private bool IsOnSlipperySurface(Vector2 position)
+    {
+        Vector3Int tilePosition = SlipperyTilemap.WorldToCell(position);
+        TileBase tile = SlipperyTilemap.GetTile(tilePosition);
+        return tile != null; // РџСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ, С‡С‚Рѕ РЅР°Р»РёС‡РёРµ С‚Р°Р№Р»Р° РѕР·РЅР°С‡Р°РµС‚ СЃРєРѕР»СЊР·РєСѓСЋ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ
     }
 
     private bool IsOnWater(Vector2 position)
