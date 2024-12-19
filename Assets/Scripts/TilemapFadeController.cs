@@ -7,6 +7,8 @@ public class TilemapFadeController : MonoBehaviour
 {
     public float FadeOutDuration = 1f;
     public float FadeInDuration = 1f;
+    public AnimationCurve FadeOutCurve = AnimationCurve.Linear(0, 0, 1, 1);
+    public AnimationCurve FadeInCurve = AnimationCurve.Linear(0, 1, 1, 0);
     private Tilemap _tilemap;
 
     public UnityEvent OnFadeOutStart;
@@ -45,7 +47,7 @@ public class TilemapFadeController : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         OnFadeOutStart?.Invoke();
-        yield return StartCoroutine(Fade(0, 1f, FadeOutDuration));
+        yield return StartCoroutine(Fade(0, 1f, FadeOutDuration, FadeOutCurve));
         OnFadeOutComplete?.Invoke();
     }
 
@@ -54,11 +56,11 @@ public class TilemapFadeController : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         OnFadeInStart?.Invoke();
-        yield return StartCoroutine(Fade(1, 0f, FadeInDuration));
+        yield return StartCoroutine(Fade(1, 0f, FadeInDuration, FadeInCurve));
         OnFadeInComplete?.Invoke();
     }
 
-    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    private IEnumerator Fade(float startAlpha, float endAlpha, float duration, AnimationCurve curve)
     {
         float elapsed = 0f;
         Color color = _tilemap.color;
@@ -67,7 +69,8 @@ public class TilemapFadeController : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
-            _tilemap.color = new Color(color.r, color.g, color.b, Mathf.Lerp(startAlpha, endAlpha, t));
+            float curveValue = curve.Evaluate(t);
+            _tilemap.color = new Color(color.r, color.g, color.b, Mathf.Lerp(startAlpha, endAlpha, curveValue));
             yield return null;
         }
 
