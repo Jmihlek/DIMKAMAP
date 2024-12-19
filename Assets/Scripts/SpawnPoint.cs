@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,16 +6,24 @@ public class SpawnPoint : MonoBehaviour
 {
     [Header("Если не указано, то используется игрок на сцене")]
     public GameObject prefabToSpawn;
-    public UnityEvent AfterSpawn; 
+    public UnityEvent AfterSpawn;
+    public bool IsSpawnOnAwake = false;
 
-    public void SpawnOrMovePlayer()
+    private void Awake()
+    {
+        if (IsSpawnOnAwake)
+            PerformSpawnOrMove();
+    }
+
+    public void PerformSpawnOrMove()
     {
         if (prefabToSpawn != null)
         {
             // Создаем новый экземпляр префаба в позиции SpawnPoint
             Instantiate(prefabToSpawn, transform.position, transform.rotation);
-
-        } else {
+        }
+        else
+        {
             var existingObject = FindAnyObjectByType<PlayerController2D>();
             if (existingObject != null)
             {

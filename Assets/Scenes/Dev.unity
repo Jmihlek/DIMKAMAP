@@ -4747,7 +4747,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 30000
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.34901962}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4776,31 +4776,7 @@ MonoBehaviour:
       m_Calls: []
   OnFadeOutComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2027966593}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1278089644}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnFadeInStart:
     m_PersistentCalls:
       m_Calls: []
@@ -4839,6 +4815,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1001 &120254552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4939,6 +4917,8 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls: []
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &124200930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5002,6 +4982,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1001 &148103381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5110,6 +5092,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &165035110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,6 +5466,8 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls: []
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &200368495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6119,7 +6105,7 @@ Transform:
   m_GameObject: {fileID: 289338289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42, y: 0.54, z: 0}
+  m_LocalPosition: {x: 30.869999, y: 21.66, z: 0}
   m_LocalScale: {x: 7.423796, y: 7.423796, z: 7.423796}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6863,6 +6849,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!4 &461705955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3587321488064041209, guid: 9cc5017f698fd7c409e872ddf2a6f501, type: 3}
@@ -14799,6 +14787,8 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls: []
+  DelayedEventAfterClose:
+    events: []
 --- !u!1001 &476248014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23032,6 +23022,8 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls: []
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &565097068
 GameObject:
   m_ObjectHideFlags: 0
@@ -26133,30 +26125,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1278089644}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2027966593}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  DelayedEventAfterClose:
+    events:
+    - Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1278089644}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 2027966593}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      Delay: 1
 --- !u!1001 &607922708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26253,6 +26251,8 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls: []
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &626119463
 GameObject:
   m_ObjectHideFlags: 0
@@ -33097,18 +33097,6 @@ MonoBehaviour:
   EventAfterClose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1296983938}
-        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
-        m_MethodName: SpawnOrMovePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1601760921}
         m_TargetAssemblyTypeName: CoverController, Assembly-CSharp
         m_MethodName: FadeOut
@@ -33121,6 +33109,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1028419921}
+        m_TargetAssemblyTypeName: CoverController, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DelayedEventAfterClose:
+    events:
+    - Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1296983938}
+            m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
+            m_MethodName: PerformSpawnOrMove
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1567912402}
+            m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
+            m_MethodName: PerformSpawnOrMove
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      Delay: 1
 --- !u!1 &954187109
 GameObject:
   m_ObjectHideFlags: 0
@@ -33987,19 +34017,7 @@ MonoBehaviour:
       m_Calls: []
   OnFadeInStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1567912402}
-        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
-        m_MethodName: SpawnOrMovePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnFadeInComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -38626,7 +38644,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 30000
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -38863,6 +38881,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &1296983936
 GameObject:
   m_ObjectHideFlags: 0
@@ -38910,19 +38930,8 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 0}
   AfterSpawn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1028419921}
-        m_TargetAssemblyTypeName: CoverController, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  IsSpawnOnAwake: 0
 --- !u!1 &1308991637
 GameObject:
   m_ObjectHideFlags: 0
@@ -42703,6 +42712,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!4 &1312846547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4660200791338773870, guid: 41a23e56c56145b408109c4b57b5feb2, type: 3}
@@ -43314,7 +43325,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 50
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.3254717, b: 0.8889319, a: 0.02745098}
+  m_Color: {r: 1, g: 0.3254717, b: 0.8889319, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -43402,6 +43413,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &1448168127
 GameObject:
   m_ObjectHideFlags: 0
@@ -43783,6 +43796,7 @@ MonoBehaviour:
   AfterSpawn:
     m_PersistentCalls:
       m_Calls: []
+  IsSpawnOnAwake: 0
 --- !u!4 &1567912403
 Transform:
   m_ObjectHideFlags: 0
@@ -44038,7 +44052,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 30000
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -45209,6 +45223,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &1719128135
 GameObject:
   m_ObjectHideFlags: 0
@@ -45403,6 +45419,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1001 &1762391495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45523,6 +45541,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!4 &1762391500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6762951996186642910, guid: cf7633d0e9c065d4486669bf42869f8e, type: 3}
@@ -52705,6 +52725,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!1 &1927530626
 GameObject:
   m_ObjectHideFlags: 0
@@ -58629,6 +58651,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  DelayedEventAfterClose:
+    events: []
 --- !u!4 &2027099619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2726533211217836057, guid: cab3c6cf77e0c8d4f98b63e27720b83a, type: 3}

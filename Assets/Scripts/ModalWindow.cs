@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class ModalWindow : MonoBehaviour
 {
     public UnityEvent EventAfterClose;
+    public DelayedUnityEvent DelayedEventAfterClose;
     public static bool IsShowModalNow = false;
     private PlayerInput _input;
 
@@ -26,6 +27,7 @@ public class ModalWindow : MonoBehaviour
         IsShowModalNow = false;
         _input.SwitchCurrentActionMap("Player");
         EventAfterClose?.Invoke();
+        DelayedEventAfterClose?.Invoke();
         gameObject.SetActive(false);
     }
 }
