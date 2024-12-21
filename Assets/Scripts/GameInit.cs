@@ -8,7 +8,15 @@ public class GameInit : MonoBehaviour
     void Start()
     {
         if (NeedFadeoutOnLoad)
-            BeginCover.FadeIn();
+        {
+            if (BeginCover != null)
+                BeginCover.FadeIn();
+            else
+            {
+                var cameraUtils = FindAnyObjectByType<CameraUtils>();
+                cameraUtils.ShowScreen(4);
+            }
+        }
     }
 
 }

@@ -47,7 +47,11 @@ public class DeadManager : MonoBehaviour
             GameObject randomMessage = deathMessages[Random.Range(0, deathMessages.Count)];
 
             randomMessage.SetActive(true);
-            randomMessage.transform.position = closestArea.transform.position;
+            randomMessage.transform.position = new Vector3(
+                closestArea.transform.position.x, 
+                closestArea.transform.position.y, 
+                randomMessage.transform.position.z
+            );
         }
     }
 

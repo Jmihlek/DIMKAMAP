@@ -13,6 +13,8 @@ public class PlayerController2D : MonoBehaviour
     public event Action OnDead;
     public Tilemap SlipperyTilemap;
     public float SlipperyFactor = .1f;
+    /// <summary>Нужно ли пытаться остановить персонажа (в том числе при скольжении)</summary>
+    public bool IsNeedStop { get; set; } = false;
 
     private PlayerInput _input;
     private bool _isDead;
@@ -49,7 +51,7 @@ public class PlayerController2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isDead || ModalWindow.IsShowModalNow)
+        if (_isDead || ModalWindow.IsShowModalNow || IsNeedStop)
         {
             _rb.linearVelocity = Vector2.zero;
             return;
